@@ -30,6 +30,18 @@ createApp({
     },
 
     methods: {
-        
-    },
+        prevSlide: function(){
+            this.activeIndex--;
+            if(this.activeIndex < 0){
+                this.activeIndex = this.imagesList.length - 1;
+            }
+        },
+
+        nextSlide: function(){
+            this.activeIndex++;
+            if(this.activeIndex >= this.imagesList.length){
+                this.activeIndex = 0;
+            }
+        }
+    }
 }).mount('#app')
